@@ -24,21 +24,22 @@ const currentYear = new Date().getFullYear();
 
   <main class="main">
     <div class="project-images">
-      <img src={img1} alt="Option O project image 1" width="1200" height="675" loading="eager" />
+      <img src={img1} alt="Option O project image 1" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />
       <video
         src={getCDNUrl('option-o/option-o-2.mov')}
         autoplay
         loop
         muted
         playsinline
+        preload="none"
         class="project-video"
       ></video>
-      <img src={img3} alt="Option O project image 3" width="1200" height="675" loading="lazy" />
-      <img src={img4} alt="Option O project image 4" width="1200" height="675" loading="lazy" />
-      <img src={img5} alt="Option O project image 5" width="1200" height="675" loading="lazy" />
-      <img src={img6} alt="Option O project image 6" width="1200" height="675" loading="lazy" />
-      <img src={img7} alt="Option O project image 7" width="1200" height="675" loading="lazy" />
-      <img src={img8} alt="Option O project image 8" width="1200" height="675" loading="lazy" />
+      <img src={img3} alt="Option O project image 3" width="1200" height="675" loading="lazy" decoding="async" />
+      <img src={img4} alt="Option O project image 4" width="1200" height="675" loading="lazy" decoding="async" />
+      <img src={img5} alt="Option O project image 5" width="1200" height="675" loading="lazy" decoding="async" />
+      <img src={img6} alt="Option O project image 6" width="1200" height="675" loading="lazy" decoding="async" />
+      <img src={img7} alt="Option O project image 7" width="1200" height="675" loading="lazy" decoding="async" />
+      <img src={img8} alt="Option O project image 8" width="1200" height="675" loading="lazy" decoding="async" />
     </div>
   </main>
 

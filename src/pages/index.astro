@@ -186,10 +186,8 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
 
 <style>
   .header {
-    position: fixed;
-    top: var(--page-margin);
-    left: var(--page-margin);
-    right: var(--page-margin);
+    position: static;
+    padding: var(--page-margin);
     z-index: 100;
   }
 
@@ -212,7 +210,7 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
   }
 
   .main {
-    padding: calc(var(--page-margin) + var(--spacing-hero)) var(--page-margin) var(--page-margin);
+    padding: var(--page-margin);
   }
 
   .hero {
@@ -450,18 +448,20 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
     }
 
     .main {
-      padding: calc(var(--page-margin) + 5rem) var(--spacing-md) var(--spacing-md);
+      padding: var(--spacing-md);
     }
 
     .header {
-      left: var(--spacing-md);
-      right: var(--spacing-md);
-      top: var(--spacing-md);
+      padding: var(--spacing-md);
     }
 
     .project-content {
       grid-template-columns: 1fr;
       gap: var(--spacing-md);
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
     }
 
     .project-hero-image {

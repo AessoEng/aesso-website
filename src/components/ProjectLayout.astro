@@ -58,10 +58,8 @@ const currentYear = new Date().getFullYear();
 
 <style>
   .header {
-    position: fixed;
-    top: var(--page-margin);
-    left: var(--page-margin);
-    right: var(--page-margin);
+    position: static;
+    padding: var(--page-margin);
     z-index: 100;
     background: transparent;
   }
@@ -85,7 +83,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .main {
-    padding-top: calc(var(--page-margin) + var(--spacing-xl));
+    padding-top: 0;
   }
 
   .project-hero {
@@ -204,9 +202,7 @@ const currentYear = new Date().getFullYear();
     }
 
     .header {
-      left: var(--spacing-md);
-      right: var(--spacing-md);
-      top: var(--spacing-md);
+      padding: var(--spacing-md);
     }
 
     .pre-footer-content {

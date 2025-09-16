@@ -1,0 +1,7 @@
+# Robots.txt for aesso.com
+User-agent: *
+Allow: /
+Sitemap: https://aesso.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

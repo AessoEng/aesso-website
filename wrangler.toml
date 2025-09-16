@@ -1,0 +1,21 @@
+name = "aesso-website"
+account_id = "1c7ca0c1afd598a22989aa281b73b58c"
+main = "dist/_worker.js/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "npm run build"
+
+[site]
+bucket = "./dist"
+exclude = ["_worker.js", "_routes.json"]
+
+[observability]
+enabled = true
+
+# KV namespace commented out - not currently used
+# [[kv_namespaces]]
+# binding = "SESSION"
+# id = "0b7f2571ce964f23bb37c6cd7ab9691f"
+# preview_id = "2331904ba0154ef1bac97d6dcc369812"

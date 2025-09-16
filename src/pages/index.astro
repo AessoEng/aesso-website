@@ -1,0 +1,489 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const currentYear = new Date().getFullYear();
+
+// Calculate date 2 weeks from today
+const futureDate = new Date();
+futureDate.setDate(futureDate.getDate() + 14);
+const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+// Import images - these will be added when you place images in src/images/
+// Example imports (uncomment when images are added):
+// import optionOHero from '../images/option-o-hero.jpg';
+// import optionOGrid1 from '../images/option-o-grid-1.jpg';
+// import optionOGrid2 from '../images/option-o-grid-2.jpg';
+---
+
+<BaseLayout title="Aesso">
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="logo">Aesso</a>
+      <a href="mailto:hello@aesso.com" class="email">hello@aesso.com ↗</a>
+    </nav>
+  </header>
+
+  <main class="main" id="main-content">
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-text">
+          Multidisciplinary design partners, specializing in creative work that's as intuitive as it is beautiful.
+        </h1>
+        <div class="hero-info">
+          <p>Available for new projects in {availableMonth}.<br>
+          Follow us on <a href="https://instagram.com/aessostudio" target="_blank" rel="noopener">Instagram</a> and <a href="https://x.com/aessostudio" target="_blank" rel="noopener">X</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <article class="project">
+        <div class="project-images">
+          <div class="project-hero-image">
+            <img
+              src="/images/home/home-option-1.avif"
+              alt="Option O coffee grinder"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-grid">
+            <video
+              src="/images/home/home-option-2.mov"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              class="project-video"
+            ></video>
+            <img
+              src="/images/home/home-option-3.avif"
+              alt="Option O detail"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="project-content">
+          <h2 class="project-title">Option O</h2>
+          <div class="project-info">
+            <p class="project-description">Web design explorations for Option O, the Melbourne-based engineering team designing and manufacturing premium coffee grinders. The layouts that we created are for an eCommerce website on Shopify, highlighting the release of their new flagship flat burr grinder, the Lagom 01.</p>
+            <a href="/option-o" class="project-link">View project</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-images">
+          <div class="project-hero-image">
+            <img
+              src="/images/home/home-mail-1.avif"
+              alt="Mail app design"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-grid">
+            <div class="svg-container">
+              <img
+                src="/images/home/home-mail-2.svg"
+                alt="Mail detail 1"
+                loading="lazy"
+                class="svg-actual-size"
+              />
+            </div>
+            <video
+              src="/images/home/home-mail-3.mov"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              class="project-video"
+            ></video>
+          </div>
+        </div>
+        <div class="project-content">
+          <h2 class="project-title">Mail app</h2>
+          <div class="project-info">
+            <p class="project-description">Product development and native app design for Mail, a soon-to-launch email client for iOS and macOS. Our vision is a refreshingly simple approach to email, where niche features and visual clutter are eliminated, leaving users with a streamlined and intuitive experience.</p>
+            <a href="/mail" class="project-link">View project</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-images">
+          <div class="project-hero-image">
+            <img
+              src="/images/home/home-destaire-1.avif"
+              alt="Déstaire travel brand"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-grid">
+            <video
+              src="/images/home/home-destaire-2.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              class="project-video"
+            ></video>
+            <img
+              src="/images/home/home-destaire-3.png"
+              alt="Déstaire detail"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="project-content">
+          <h2 class="project-title">Déstaire</h2>
+          <div class="project-info">
+            <p class="project-description">Branding, design and development work for Déstaire, a premium travel brand. With a focus on specialty hotels and city guides, they aim to deliver highly considered and curated travel recommendations for discerning travelers.</p>
+            <a href="/destaire" class="project-link">View project</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <section class="pre-footer">
+    <div class="pre-footer-content">
+      <h2 class="pre-footer-heading">
+        Based in Paris.<br>
+        <a href="mailto:hello@aesso.com">Get in touch at hello@aesso.com ↗</a>
+      </h2>
+      <div class="pre-footer-text">
+        <p>We believe that the best user experiences are intuitive, beautiful and a joy to use. These principles are reflected in our work through an instinctual approach to design, and a meticulous attention to detail.</p>
+        <p>Our multidisciplinary team of senior and principal designers can spearhead projects of any scale, or work within your existing team to create digital products, branding, apps, websites and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="copyright">© {currentYear} Aesso, LLC. All rights reserved.</p>
+      <p class="footer-social">Follow us on <a href="https://instagram.com/aessostudio" target="_blank" rel="noopener">Instagram</a> and <a href="https://x.com/aessostudio" target="_blank" rel="noopener">X</a>.</p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .header {
+    position: fixed;
+    top: var(--page-margin);
+    left: var(--page-margin);
+    right: var(--page-margin);
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .logo,
+  .email {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .logo:hover,
+  .email:hover {
+    opacity: 0.7;
+  }
+
+  .main {
+    padding: calc(var(--page-margin) + var(--spacing-hero)) var(--page-margin) var(--page-margin);
+  }
+
+  .hero {
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+  }
+
+  .hero-text {
+    font-size: 1.875rem;
+    line-height: 1.3;
+    font-weight: 400;
+    max-width: 50rem;
+  }
+
+  .hero-info {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    padding-top: 0.35rem; /* Align baseline with heading */
+  }
+
+
+  .hero-info a {
+    text-decoration: none;
+  }
+
+  .hero-info a:hover {
+    opacity: 0.7;
+  }
+
+  .projects {
+    margin-top: var(--spacing-xxl);
+    padding-bottom: 15rem;
+  }
+
+  .project {
+    margin-bottom: 11rem;
+  }
+
+  .project:last-child {
+    margin-bottom: 0;
+  }
+
+  .project-images {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-hero-image {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: #f5f5f5;
+    aspect-ratio: 2.39 / 1; /* Anamorphic ratio */
+  }
+
+  .project-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .project-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #f5f5f5;
+    display: block;
+  }
+
+  .svg-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .svg-actual-size {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: unset !important;
+    object-fit: contain !important;
+  }
+
+  .project-video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center 25%;
+    background: #f5f5f5;
+    display: block;
+  }
+
+  .project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .project-title {
+    font-size: 1.875rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 32rem;
+  }
+
+  .project-description {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .project-link {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    text-decoration: underline;
+    color: var(--color-text);
+    display: inline-block;
+  }
+
+  .project-link:hover {
+    opacity: 0.7;
+  }
+
+  .pre-footer {
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .pre-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2.5rem;
+    right: 2.5rem;
+    border-top: 1px solid #ebebeb;
+  }
+
+  .pre-footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .pre-footer-heading {
+    font-size: 1.875rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  .pre-footer-heading a {
+    text-decoration: none;
+    color: var(--color-text);
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .pre-footer-heading a:hover {
+    opacity: 1;
+  }
+
+  .pre-footer-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    max-width: 32rem;
+  }
+
+  .pre-footer-text p {
+    margin-bottom: 1rem;
+  }
+
+  .pre-footer-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    margin-top: 10rem;
+    padding: 2.5rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright,
+  .footer-social {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .footer-social a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .footer-social a:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .hero-text {
+      font-size: 1.5rem;
+    }
+
+    .main {
+      padding: calc(var(--page-margin) + 5rem) var(--spacing-md) var(--spacing-md);
+    }
+
+    .header {
+      left: var(--spacing-md);
+      right: var(--spacing-md);
+      top: var(--spacing-md);
+    }
+
+    .project-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .project-hero-image {
+      margin-bottom: 1rem;
+    }
+
+    .project {
+      margin-bottom: 6rem;
+    }
+
+    .projects {
+      padding-bottom: 8rem;
+    }
+
+    .pre-footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .pre-footer {
+      padding: 2.5rem var(--spacing-md);
+    }
+
+    .pre-footer::before {
+      left: var(--spacing-md);
+      right: var(--spacing-md);
+    }
+
+    .footer {
+      padding: 2.5rem var(--spacing-md);
+      margin-top: 6rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: var(--spacing-md);
+      text-align: center;
+    }
+  }
+</style>
+

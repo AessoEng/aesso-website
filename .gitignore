@@ -27,3 +27,6 @@ pnpm-debug.log*
 # wrangler
 .wrangler/
 .dev.vars
+
+# media files (stored in R2)
+public/images/

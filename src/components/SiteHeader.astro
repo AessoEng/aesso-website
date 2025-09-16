@@ -1,0 +1,43 @@
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="site-logo">Aesso</a>
+    <a href="mailto:hello@aesso.com" class="site-email">hello@aesso.com ↗</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: var(--page-margin);
+    left: var(--page-margin);
+    right: var(--page-margin);
+    z-index: 100;
+  }
+
+  .site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .site-logo,
+  .site-email {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .site-logo:hover,
+  .site-email:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .site-header {
+      left: var(--spacing-md);
+      right: var(--spacing-md);
+      top: var(--spacing-md);
+    }
+  }
+</style>

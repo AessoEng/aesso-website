@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# Aesso Website
 
-```sh
-npm create astro@latest -- --template minimal
+Aesso design studio website built with Astro v5 and deployed on Cloudflare Workers.
+
+## 🚀 Tech Stack
+
+- **Framework**: [Astro v5](https://astro.build/)
+- **Deployment**: [Cloudflare Workers](https://workers.cloudflare.com/)
+- **Media Storage**: [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/)
+- **Styling**: Native CSS with custom properties
+- **Font**: Suisse Intl
+
+## 🛠️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Deploy to Cloudflare Workers
+npx wrangler deploy
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📁 Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+```
 /
-├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── config/       # Configuration files
+│   ├── layouts/      # Astro layouts
+│   ├── pages/        # Page components
+│   └── styles/       # Global styles
+├── public/           # Static assets
+├── dist/             # Build output
+└── wrangler.toml     # Cloudflare Workers config
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🖼️ Media Management
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+All images and videos are hosted on Cloudflare R2 for optimal performance and no bandwidth limits. Media files are not included in the repository.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🌍 Environment
 
-## 🧞 Commands
+- **Production**: https://aesso.com
+- **Development**: https://aesso-website.lorestudio.workers.dev
 
-All commands are run from the root of the project, from a terminal:
+## 📝 License
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2025 Aesso, LLC. All rights reserved.

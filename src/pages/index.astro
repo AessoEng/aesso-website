@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCDNUrl } from '../config/cdn';
 
 const currentYear = new Date().getFullYear();
 
@@ -41,14 +42,14 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
         <div class="project-images">
           <div class="project-hero-image">
             <img
-              src="/images/home/home-option-1.avif"
+              src={getCDNUrl('images/home/home-option-1.avif')}
               alt="Option O coffee grinder"
               loading="lazy"
             />
           </div>
           <div class="project-grid">
             <video
-              src="/images/home/home-option-2.mov"
+              src={getCDNUrl('images/home/home-option-2.mov')}
               autoplay
               loop
               muted
@@ -57,7 +58,7 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
               class="project-video"
             ></video>
             <img
-              src="/images/home/home-option-3.avif"
+              src={getCDNUrl('images/home/home-option-3.avif')}
               alt="Option O detail"
               loading="lazy"
             />
@@ -76,7 +77,7 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
         <div class="project-images">
           <div class="project-hero-image">
             <img
-              src="/images/home/home-mail-1.avif"
+              src={getCDNUrl('images/home/home-mail-1.avif')}
               alt="Mail app design"
               loading="lazy"
             />
@@ -84,14 +85,14 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
           <div class="project-grid">
             <div class="svg-container">
               <img
-                src="/images/home/home-mail-2.svg"
+                src={getCDNUrl('images/home/home-mail-2.svg')}
                 alt="Mail detail 1"
                 loading="lazy"
                 class="svg-actual-size"
               />
             </div>
             <video
-              src="/images/home/home-mail-3.mov"
+              src={getCDNUrl('images/home/home-mail-3.mov')}
               autoplay
               loop
               muted
@@ -114,14 +115,14 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
         <div class="project-images">
           <div class="project-hero-image">
             <img
-              src="/images/home/home-destaire-1.avif"
+              src={getCDNUrl('images/home/home-destaire-1.avif')}
               alt="Déstaire travel brand"
               loading="lazy"
             />
           </div>
           <div class="project-grid">
             <video
-              src="/images/home/home-destaire-2.mp4"
+              src={getCDNUrl('images/home/home-destaire-2.mp4')}
               autoplay
               loop
               muted
@@ -130,7 +131,7 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
               class="project-video"
             ></video>
             <img
-              src="/images/home/home-destaire-3.png"
+              src={getCDNUrl('images/home/home-destaire-3.png')}
               alt="Déstaire detail"
               loading="lazy"
             />

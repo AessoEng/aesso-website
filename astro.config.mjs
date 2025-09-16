@@ -10,6 +10,7 @@ export default defineConfig({
   integrations: [sitemap()],
   adapter: cloudflare({
     mode: 'directory',
+    sessions: false,
     platformProxy: {
       enabled: true,
       configPath: 'wrangler.toml',

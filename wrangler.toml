@@ -2,6 +2,7 @@ name = "aesso-website"
 main = "dist/_worker.js/index.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
+account_id = "1c7ca0c1afd598a22989aa281b73b58c"
 
 [assets]
 directory = "./dist"
@@ -15,7 +16,7 @@ enabled = true
 # binding = "R2_MEDIA"
 # bucket_name = "aesso-media"
 
-# KV namespace commented out - not currently used
+# KV namespace - remove comment if sessions are needed
 # [[kv_namespaces]]
 # binding = "SESSION"
 # id = "0b7f2571ce964f23bb37c6cd7ab9691f"

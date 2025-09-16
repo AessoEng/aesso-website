@@ -1,16 +1,15 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCDNUrl } from '../config/cdn';
 
 // Import local images for optimization
-import img1 from '../images/projects/option-o/option-o-1.webp';
-import img3 from '../images/projects/option-o/option-o-3.webp';
-import img4 from '../images/projects/option-o/option-o-4.webp';
-import img5 from '../images/projects/option-o/option-o-5.webp';
-import img6 from '../images/projects/option-o/option-o-6.webp';
-import img7 from '../images/projects/option-o/option-o-7.webp';
-import img8 from '../images/projects/option-o/option-o-8.webp';
+import img1 from '../images/projects/option-o/option-o-1.webp?url';
+import img3 from '../images/projects/option-o/option-o-3.webp?url';
+import img4 from '../images/projects/option-o/option-o-4.webp?url';
+import img5 from '../images/projects/option-o/option-o-5.webp?url';
+import img6 from '../images/projects/option-o/option-o-6.webp?url';
+import img7 from '../images/projects/option-o/option-o-7.webp?url';
+import img8 from '../images/projects/option-o/option-o-8.webp?url';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -25,7 +24,7 @@ const currentYear = new Date().getFullYear();
 
   <main class="main">
     <div class="project-images">
-      <Image src={img1} alt="Option O project image 1" width={1200} height={675} loading="eager" format="avif" />
+      <img src={img1} alt="Option O project image 1" width="1200" height="675" loading="eager" />
       <video
         src={getCDNUrl('option-o/option-o-2.mov')}
         autoplay
@@ -34,12 +33,12 @@ const currentYear = new Date().getFullYear();
         playsinline
         class="project-video"
       ></video>
-      <Image src={img3} alt="Option O project image 3" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img4} alt="Option O project image 4" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img5} alt="Option O project image 5" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img6} alt="Option O project image 6" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img7} alt="Option O project image 7" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img8} alt="Option O project image 8" width={1200} height={675} loading="lazy" format="avif" />
+      <img src={img3} alt="Option O project image 3" width="1200" height="675" loading="lazy" />
+      <img src={img4} alt="Option O project image 4" width="1200" height="675" loading="lazy" />
+      <img src={img5} alt="Option O project image 5" width="1200" height="675" loading="lazy" />
+      <img src={img6} alt="Option O project image 6" width="1200" height="675" loading="lazy" />
+      <img src={img7} alt="Option O project image 7" width="1200" height="675" loading="lazy" />
+      <img src={img8} alt="Option O project image 8" width="1200" height="675" loading="lazy" />
     </div>
   </main>
 

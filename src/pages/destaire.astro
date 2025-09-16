@@ -1,16 +1,15 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCDNUrl } from '../config/cdn';
 
 // Import local images for optimization
-import img2 from '../images/projects/destaire/destaire-2.avif';
-import img3 from '../images/projects/destaire/destaire-3.avif';
-import img4 from '../images/projects/destaire/destaire-4.avif';
-import img5 from '../images/projects/destaire/destaire-5.avif';
-import img6 from '../images/projects/destaire/destaire-6.avif';
-import img7 from '../images/projects/destaire/destaire-7.avif';
-import img8 from '../images/projects/destaire/destaire-8.avif';
+import img2 from '../images/projects/destaire/destaire-2.avif?url';
+import img3 from '../images/projects/destaire/destaire-3.avif?url';
+import img4 from '../images/projects/destaire/destaire-4.avif?url';
+import img5 from '../images/projects/destaire/destaire-5.avif?url';
+import img6 from '../images/projects/destaire/destaire-6.avif?url';
+import img7 from '../images/projects/destaire/destaire-7.avif?url';
+import img8 from '../images/projects/destaire/destaire-8.avif?url';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -33,13 +32,13 @@ const currentYear = new Date().getFullYear();
         playsinline
         class="project-video"
       ></video>
-      <Image src={img2} alt="Déstaire project image 2" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img3} alt="Déstaire project image 3" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img4} alt="Déstaire project image 4" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img5} alt="Déstaire project image 5" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img6} alt="Déstaire project image 6" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img7} alt="Déstaire project image 7" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img8} alt="Déstaire project image 8" width={1200} height={675} loading="lazy" format="avif" />
+      <img src={img2} alt="Déstaire project image 2" width="1200" height="675" loading="lazy" />
+      <img src={img3} alt="Déstaire project image 3" width="1200" height="675" loading="lazy" />
+      <img src={img4} alt="Déstaire project image 4" width="1200" height="675" loading="lazy" />
+      <img src={img5} alt="Déstaire project image 5" width="1200" height="675" loading="lazy" />
+      <img src={img6} alt="Déstaire project image 6" width="1200" height="675" loading="lazy" />
+      <img src={img7} alt="Déstaire project image 7" width="1200" height="675" loading="lazy" />
+      <img src={img8} alt="Déstaire project image 8" width="1200" height="675" loading="lazy" />
     </div>
   </main>
 

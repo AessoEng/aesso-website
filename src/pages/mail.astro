@@ -1,14 +1,13 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCDNUrl } from '../config/cdn';
 
 // Import local images for optimization
-import img1 from '../images/projects/mail/mail-1.webp';
-import img3 from '../images/projects/mail/mail-3.webp';
-import img4 from '../images/projects/mail/mail-4.webp';
-import img5 from '../images/projects/mail/mail-5.webp';
-import img7 from '../images/projects/mail/mail-7.webp';
+import img1 from '../images/projects/mail/mail-1.webp?url';
+import img3 from '../images/projects/mail/mail-3.webp?url';
+import img4 from '../images/projects/mail/mail-4.webp?url';
+import img5 from '../images/projects/mail/mail-5.webp?url';
+import img7 from '../images/projects/mail/mail-7.webp?url';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -23,7 +22,7 @@ const currentYear = new Date().getFullYear();
 
   <main class="main">
     <div class="project-images">
-      <Image src={img1} alt="Mail project image 1" width={1200} height={675} loading="eager" format="avif" />
+      <img src={img1} alt="Mail project image 1" width="1200" height="675" loading="eager" />
       <video
         src={getCDNUrl('mail/mail-2.mov')}
         autoplay
@@ -32,9 +31,9 @@ const currentYear = new Date().getFullYear();
         playsinline
         class="project-video"
       ></video>
-      <Image src={img3} alt="Mail project image 3" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img4} alt="Mail project image 4" width={1200} height={675} loading="lazy" format="avif" />
-      <Image src={img5} alt="Mail project image 5" width={1200} height={675} loading="lazy" format="avif" />
+      <img src={img3} alt="Mail project image 3" width="1200" height="675" loading="lazy" />
+      <img src={img4} alt="Mail project image 4" width="1200" height="675" loading="lazy" />
+      <img src={img5} alt="Mail project image 5" width="1200" height="675" loading="lazy" />
       <video
         src={getCDNUrl('mail/mail-6.mov')}
         autoplay
@@ -43,7 +42,7 @@ const currentYear = new Date().getFullYear();
         playsinline
         class="project-video"
       ></video>
-      <Image src={img7} alt="Mail project image 7" width={1200} height={675} loading="lazy" format="avif" />
+      <img src={img7} alt="Mail project image 7" width="1200" height="675" loading="lazy" />
     </div>
   </main>
 

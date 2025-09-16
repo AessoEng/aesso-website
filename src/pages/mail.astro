@@ -22,27 +22,29 @@ const currentYear = new Date().getFullYear();
 
   <main class="main">
     <div class="project-images">
-      <img src={img1} alt="Mail project image 1" width="1200" height="675" loading="eager" />
+      <img src={img1} alt="Mail project image 1" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />
       <video
         src={getCDNUrl('mail/mail-2.mov')}
         autoplay
         loop
         muted
         playsinline
+        preload="none"
         class="project-video"
       ></video>
-      <img src={img3} alt="Mail project image 3" width="1200" height="675" loading="lazy" />
-      <img src={img4} alt="Mail project image 4" width="1200" height="675" loading="lazy" />
-      <img src={img5} alt="Mail project image 5" width="1200" height="675" loading="lazy" />
+      <img src={img3} alt="Mail project image 3" width="1200" height="675" loading="lazy" decoding="async" />
+      <img src={img4} alt="Mail project image 4" width="1200" height="675" loading="lazy" decoding="async" />
+      <img src={img5} alt="Mail project image 5" width="1200" height="675" loading="lazy" decoding="async" />
       <video
         src={getCDNUrl('mail/mail-6.mov')}
         autoplay
         loop
         muted
         playsinline
+        preload="none"
         class="project-video"
       ></video>
-      <img src={img7} alt="Mail project image 7" width="1200" height="675" loading="lazy" />
+      <img src={img7} alt="Mail project image 7" width="1200" height="675" loading="lazy" decoding="async" />
     </div>
   </main>
 

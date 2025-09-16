@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 
@@ -9,15 +9,15 @@ export default defineConfig({
   output: 'server',
   integrations: [sitemap()],
   adapter: cloudflare({
+    mode: 'directory',
     platformProxy: {
       enabled: true,
       configPath: 'wrangler.toml',
       persist: { path: './.cache/wrangler/v3' }
-    },
-    imageService: 'compile',
-    wasmModuleImports: true
+    }
   }),
   image: {
+    service: passthroughImageService(),
     // Allow loading images from R2 CDN
     remotePatterns: [{
       protocol: 'https',

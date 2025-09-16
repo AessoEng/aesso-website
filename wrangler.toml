@@ -1,18 +1,22 @@
 name = "aesso-website"
 account_id = "1c7ca0c1afd598a22989aa281b73b58c"
-main = "dist/_worker.js/index.js"
+main = "dist/server/entry.mjs"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
+
+[site]
+bucket = "./dist/client"
 
 [build]
 command = "npm run build"
 
-[site]
-bucket = "./dist"
-exclude = ["_worker.js", "_routes.json"]
-
 [observability]
 enabled = true
+
+# R2 bucket - temporarily disabled due to deployment issue
+# [[r2_buckets]]
+# binding = "R2_MEDIA"
+# bucket_name = "aesso-media"
 
 # KV namespace commented out - not currently used
 # [[kv_namespaces]]

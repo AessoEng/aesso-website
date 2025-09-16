@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 
@@ -18,7 +18,11 @@ export default defineConfig({
     wasmModuleImports: true
   }),
   image: {
-    service: passthroughImageService()
+    // Allow loading images from R2 CDN
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'assets.aesso.com'
+    }]
   },
   vite: {
     ssr: {

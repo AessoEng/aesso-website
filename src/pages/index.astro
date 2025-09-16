@@ -1,6 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCDNUrl } from '../config/cdn';
+
+// Import local images for optimization
+import optionHero from '../images/home/home-option-1.avif';
+import optionGrid from '../images/home/home-option-3.avif';
+import mailHero from '../images/home/home-mail-1.avif';
+import mailIcon from '../images/home/home-mail-2.svg';
+import destaireHero from '../images/home/home-destaire-1.avif';
+import destaireGrid from '../images/home/home-destaire-3.png';
 
 const currentYear = new Date().getFullYear();
 
@@ -8,12 +17,6 @@ const currentYear = new Date().getFullYear();
 const futureDate = new Date();
 futureDate.setDate(futureDate.getDate() + 14);
 const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-
-// Import images - these will be added when you place images in src/images/
-// Example imports (uncomment when images are added):
-// import optionOHero from '../images/option-o-hero.jpg';
-// import optionOGrid1 from '../images/option-o-grid-1.jpg';
-// import optionOGrid2 from '../images/option-o-grid-2.jpg';
 ---
 
 <BaseLayout title="Aesso">
@@ -41,15 +44,18 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
       <article class="project">
         <div class="project-images">
           <div class="project-hero-image">
-            <img
-              src={getCDNUrl('images/home/home-option-1.avif')}
+            <Image
+              src={optionHero}
               alt="Option O coffee grinder"
+              width={1200}
+              height={502}
               loading="lazy"
+              format="avif"
             />
           </div>
           <div class="project-grid">
             <video
-              src={getCDNUrl('images/home/home-option-2.mov')}
+              src={getCDNUrl('home/home-option-2.mov')}
               autoplay
               loop
               muted
@@ -57,10 +63,13 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
               preload="metadata"
               class="project-video"
             ></video>
-            <img
-              src={getCDNUrl('images/home/home-option-3.avif')}
+            <Image
+              src={optionGrid}
               alt="Option O detail"
+              width={600}
+              height={338}
               loading="lazy"
+              format="avif"
             />
           </div>
         </div>
@@ -76,23 +85,28 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
       <article class="project">
         <div class="project-images">
           <div class="project-hero-image">
-            <img
-              src={getCDNUrl('images/home/home-mail-1.avif')}
+            <Image
+              src={mailHero}
               alt="Mail app design"
+              width={1200}
+              height={502}
               loading="lazy"
+              format="avif"
             />
           </div>
           <div class="project-grid">
             <div class="svg-container">
-              <img
-                src={getCDNUrl('images/home/home-mail-2.svg')}
+              <Image
+                src={mailIcon}
                 alt="Mail detail 1"
+                width={600}
+                height={338}
                 loading="lazy"
                 class="svg-actual-size"
               />
             </div>
             <video
-              src={getCDNUrl('images/home/home-mail-3.mov')}
+              src={getCDNUrl('home/home-mail-3.mov')}
               autoplay
               loop
               muted
@@ -114,15 +128,18 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
       <article class="project">
         <div class="project-images">
           <div class="project-hero-image">
-            <img
-              src={getCDNUrl('images/home/home-destaire-1.avif')}
+            <Image
+              src={destaireHero}
               alt="Déstaire travel brand"
+              width={1200}
+              height={502}
               loading="lazy"
+              format="avif"
             />
           </div>
           <div class="project-grid">
             <video
-              src={getCDNUrl('images/home/home-destaire-2.mp4')}
+              src={getCDNUrl('home/home-destaire-2.mp4')}
               autoplay
               loop
               muted
@@ -130,10 +147,13 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
               preload="metadata"
               class="project-video"
             ></video>
-            <img
-              src={getCDNUrl('images/home/home-destaire-3.png')}
+            <Image
+              src={destaireGrid}
               alt="Déstaire detail"
+              width={600}
+              height={338}
               loading="lazy"
+              format="avif"
             />
           </div>
         </div>
@@ -168,6 +188,19 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
     </div>
   </footer>
 </BaseLayout>
+
+<script>
+  // Ensure videos loop properly
+  document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+      video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        video.play();
+      });
+    });
+  });
+</script>
 
 <style>
   .header {
@@ -487,4 +520,3 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
     }
   }
 </style>
-

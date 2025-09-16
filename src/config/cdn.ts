@@ -1,5 +1,5 @@
 // CDN configuration for R2 storage
-export const CDN_BASE_URL = 'https://pub-cd7b55b304cc4bde8180f034af4ebe56.r2.dev';
+export const CDN_BASE_URL = 'https://assets.aesso.com';
 
 // Helper to get CDN URL for assets
 export function getCDNUrl(path: string): string {

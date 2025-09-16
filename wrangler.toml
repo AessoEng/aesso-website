@@ -1,11 +1,12 @@
 name = "aesso-website"
 account_id = "1c7ca0c1afd598a22989aa281b73b58c"
-main = "dist/server/entry.mjs"
+main = "dist/_worker.js/index.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
-[site]
-bucket = "./dist/client"
+[assets]
+binding = "ASSETS"
+directory = "./dist"
 
 [build]
 command = "npm run build"

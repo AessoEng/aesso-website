@@ -9,6 +9,7 @@ export default defineConfig({
   output: 'server',
   integrations: [sitemap()],
   adapter: cloudflare({
+    imageService: 'cloudflare',
     sessions: false,
     platformProxy: {
       enabled: true,

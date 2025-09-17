@@ -6,7 +6,8 @@ import { getCDNUrl } from '../config/cdn';
 import optionHero from '../images/home/home-option-1.avif?url';
 import optionGrid from '../images/home/home-option-3.avif?url';
 import mailHero from '../images/home/home-mail-1.avif?url';
-import mailIcon from '../images/home/home-mail-2.svg?url';
+import mailHeroMobile from '../images/home/home-mail-1-mobile.avif?url';
+import mailGrid from '../images/home/home-mail-2.avif?url';
 import destaireHero from '../images/home/home-destaire-1.avif?url';
 import destaireGrid from '../images/home/home-destaire-3.png?url';
 
@@ -79,26 +80,28 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
       <article class="project">
         <div class="project-images">
           <a href="/mail" class="project-hero-image">
-            <img
-              src={mailHero}
-              alt="Mail app design"
-              width="1200"
-              height="502"
-              loading="lazy"
-              decoding="async"
-              fetchpriority="low"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcset={mailHeroMobile} />
+              <img
+                src={mailHero}
+                alt="Mail app design"
+                width="1200"
+                height="502"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </picture>
           </a>
           <div class="project-grid">
-            <a href="/mail" class="svg-container">
+            <a href="/mail" class="project-grid-link">
               <img
-                src={mailIcon}
+                src={mailGrid}
                 alt="Mail detail 1"
                 width="600"
                 height="338"
                 loading="lazy"
                 decoding="async"
-                class="svg-actual-size"
               />
             </a>
             <a href="/mail" class="project-grid-link">
@@ -240,8 +243,7 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
 
   /* Ensure clickable image links don't show underlines */
   a.project-hero-image,
-  a.project-grid-link,
-  a.svg-container {
+  a.project-grid-link {
     text-decoration: none;
     display: block;
   }
@@ -267,24 +269,6 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
     overflow: hidden;
   }
 
-  .svg-container {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-  }
-
-  .svg-actual-size {
-    width: auto !important;
-    height: auto !important;
-    max-width: 100%;
-    max-height: 100%;
-    aspect-ratio: unset !important;
-    object-fit: contain !important;
-  }
 
   .project-video {
     width: 100%;

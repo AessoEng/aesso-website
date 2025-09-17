@@ -1,0 +1,235 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  variant?: 'default' | 'fullwidth';
+}
+
+const { title, description, ogImage, variant = 'default' } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="logo">Aesso</a>
+      <a href="mailto:hello@aesso.com" class="email">hello@aesso.com ↗</a>
+    </nav>
+  </header>
+
+  <main class={variant === 'fullwidth' ? 'main main--fullwidth' : 'main'} id="main-content">
+    <slot />
+  </main>
+
+  <section class="pre-footer">
+    <div class="pre-footer-content">
+      <h2 class="pre-footer-heading">
+        Based in Paris.<br>
+        <a href="mailto:hello@aesso.com">Get in touch at hello@aesso.com ↗</a>
+      </h2>
+      <div class="pre-footer-text">
+        <p>We believe that the best user experiences are intuitive, beautiful and a joy to use. These principles are reflected in our work through an instinctual approach to design, and a meticulous attention to detail.</p>
+        <p>Our multidisciplinary team of senior and principal designers can spearhead projects of any scale, or work within your existing team to create digital products, branding, apps, websites and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="copyright">© {currentYear} Aesso, LLC. All rights reserved.</p>
+      <p class="footer-social">Follow us on <a href="https://instagram.com/aessostudio" target="_blank" rel="noopener">Instagram</a> and <a href="https://x.com/aessostudio" target="_blank" rel="noopener">X</a>.</p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .header {
+    position: fixed;
+    top: var(--page-margin);
+    left: var(--page-margin);
+    right: var(--page-margin);
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .logo,
+  .email {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+    /* Ensure links are above other elements for proper click handling */
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo:hover,
+  .email:hover {
+    opacity: 0.7;
+  }
+
+  .main {
+    padding: calc(var(--page-margin) + var(--spacing-hero)) var(--page-margin) var(--page-margin);
+  }
+
+  .main--fullwidth {
+    /* Nav is at 2.5rem from top, nav height ~2rem, then 2.5rem gap to content = 7rem total */
+    padding: calc(var(--page-margin) * 2 + 2rem) var(--page-margin) var(--page-margin);
+  }
+
+  .pre-footer {
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .pre-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2.5rem;
+    right: 2.5rem;
+    border-top: 1px solid #ebebeb;
+  }
+
+  .pre-footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .pre-footer-heading {
+    font-size: 1.875rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  .pre-footer-heading a {
+    text-decoration: none;
+    color: var(--color-text);
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .pre-footer-heading a:hover {
+    opacity: 1;
+  }
+
+  .pre-footer-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    max-width: 32rem;
+  }
+
+  .pre-footer-text p {
+    margin-bottom: 1rem;
+  }
+
+  .pre-footer-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    margin-top: 10rem;
+    padding: 2.5rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright,
+  .footer-social {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .footer-social a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .footer-social a:hover {
+    opacity: 0.7;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    .pre-footer-heading {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .main {
+      padding: calc(var(--page-margin) + 12.5rem) var(--spacing-md) var(--spacing-md);
+    }
+
+    .main--fullwidth {
+      /* Mobile: 2rem from top, nav ~2rem, then 2rem gap = 6rem total */
+      padding: calc(var(--spacing-md) * 2 + 2rem) var(--spacing-md) var(--spacing-md);
+    }
+
+    .header {
+      left: var(--spacing-md);
+      right: var(--spacing-md);
+      top: var(--spacing-md);
+    }
+
+    .pre-footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .pre-footer-heading {
+      font-size: 1.375rem;
+    }
+
+    .pre-footer {
+      padding: 2.5rem var(--spacing-md);
+    }
+
+    .pre-footer::before {
+      left: var(--spacing-md);
+      right: var(--spacing-md);
+    }
+
+    .footer {
+      padding: 2.5rem var(--spacing-md);
+      margin-top: 6rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: var(--spacing-md);
+      text-align: center;
+    }
+  }
+
+  /* Small mobile styles */
+  @media (max-width: 480px) {
+    .main {
+      padding-top: calc(var(--page-margin) + 10.5rem);
+    }
+
+    .pre-footer-heading {
+      font-size: 1.25rem;
+    }
+
+    .logo,
+    .email {
+      font-size: 0.8125rem;
+    }
+  }
+</style>

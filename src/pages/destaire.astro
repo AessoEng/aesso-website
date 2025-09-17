@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import { getCDNUrl } from '../config/cdn';
 
 // Import local images for optimization
@@ -11,18 +11,9 @@ import img6 from '../images/projects/destaire/destaire-6.avif?url';
 import img7 from '../images/projects/destaire/destaire-7.avif?url';
 import img8 from '../images/projects/destaire/destaire-8.avif?url';
 
-const currentYear = new Date().getFullYear();
 ---
 
-<BaseLayout title="Déstaire - Aesso" description="Branding, design and development work for Déstaire">
-  <header class="header">
-    <nav class="nav">
-      <a href="/" class="logo">Aesso</a>
-      <a href="mailto:hello@aesso.com" class="email">hello@aesso.com ↗</a>
-    </nav>
-  </header>
-
-  <main class="main">
+<PageLayout title="Déstaire - Aesso" description="Branding, design and development work for Déstaire" variant="fullwidth">
     <div class="project-images">
       <video
         src={getCDNUrl('destaire/destaire-1.mp4')}
@@ -41,61 +32,10 @@ const currentYear = new Date().getFullYear();
       <img src={img7} alt="Déstaire project image 7" width="1200" height="675" loading="lazy" decoding="async" />
       <img src={img8} alt="Déstaire project image 8" width="1200" height="675" loading="lazy" decoding="async" />
     </div>
-  </main>
-
-  <section class="pre-footer">
-    <div class="pre-footer-content">
-      <h2 class="pre-footer-heading">
-        Based in Paris.<br>
-        <a href="mailto:hello@aesso.com">Get in touch at hello@aesso.com ↗</a>
-      </h2>
-      <div class="pre-footer-text">
-        <p>We believe that the best user experiences are intuitive, beautiful and a joy to use. These principles are reflected in our work through an instinctual approach to design, and a meticulous attention to detail.</p>
-        <p>Our multidisciplinary team of senior and principal designers can spearhead projects of any scale, or work within your existing team to create digital products, branding, apps, websites and more.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <p class="copyright">© {currentYear} Aesso, LLC. All rights reserved.</p>
-      <p class="footer-social">Follow us on <a href="https://instagram.com/aessostudio" target="_blank" rel="noopener">Instagram</a> and <a href="https://x.com/aessostudio" target="_blank" rel="noopener">X</a>.</p>
-    </div>
-  </footer>
-</BaseLayout>
+</PageLayout>
 
 <style>
   @import '../styles/global.css';
-
-  .header {
-    position: fixed;
-    top: var(--page-margin);
-    left: var(--page-margin);
-    right: var(--page-margin);
-    z-index: 100;
-  }
-
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .logo,
-  .email {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    color: var(--color-text);
-  }
-
-  .logo:hover,
-  .email:hover {
-    opacity: 0.7;
-  }
-
-  .main {
-    padding: calc(var(--page-margin) + var(--spacing-xl)) var(--page-margin) var(--page-margin);
-  }
 
   .project-images {
     display: flex;
@@ -113,118 +53,8 @@ const currentYear = new Date().getFullYear();
     display: block;
   }
 
-  .pre-footer {
-    padding: 2.5rem;
-    position: relative;
-  }
-
-  .pre-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 2.5rem;
-    right: 2.5rem;
-    border-top: 1px solid #ebebeb;
-  }
-
-  .pre-footer-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    align-items: start;
-  }
-
-  .pre-footer-heading {
-    font-size: 1.875rem;
-    line-height: 1.3;
-    font-weight: 400;
-  }
-
-  .pre-footer-heading a {
-    text-decoration: none;
-    color: var(--color-text);
-    opacity: 0.5;
-    transition: opacity 0.2s ease;
-  }
-
-  .pre-footer-heading a:hover {
-    opacity: 1;
-  }
-
-  .pre-footer-text {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-  }
-
-  .pre-footer-text p {
-    margin-bottom: 1rem;
-  }
-
-  .pre-footer-text p:last-child {
-    margin-bottom: 0;
-  }
-
-  .footer {
-    margin-top: 10rem;
-    padding: 2.5rem;
-  }
-
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .copyright,
-  .footer-social {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    color: var(--color-text);
-  }
-
-  .footer-social a {
-    text-decoration: none;
-    color: var(--color-text);
-  }
-
-  .footer-social a:hover {
-    opacity: 0.7;
-  }
 
   @media (max-width: 768px) {
-    .main {
-      padding: calc(var(--page-margin) + 5rem) var(--spacing-md) var(--spacing-md);
-    }
 
-    .header {
-      left: var(--spacing-md);
-      right: var(--spacing-md);
-      top: var(--spacing-md);
-    }
-
-    .pre-footer-content {
-      grid-template-columns: 1fr;
-      gap: var(--spacing-md);
-    }
-
-    .pre-footer {
-      padding: 2.5rem var(--spacing-md);
-    }
-
-    .pre-footer::before {
-      left: var(--spacing-md);
-      right: var(--spacing-md);
-    }
-
-    .footer {
-      padding: 2.5rem var(--spacing-md);
-      margin-top: 6rem;
-    }
-
-    .footer-content {
-      flex-direction: column;
-      gap: var(--spacing-md);
-      text-align: center;
-    }
   }
 </style>

@@ -324,7 +324,7 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
   @media (max-width: 768px) {
     .hero-content {
       grid-template-columns: 1fr;
-      gap: 1.5rem; /* Reduced from var(--spacing-md) which is 2rem */
+      gap: var(--spacing-sm); /* Using smallest spacing variable (1rem) */
     }
 
     .hero-text {
@@ -333,7 +333,7 @@ const availableMonth = futureDate.toLocaleDateString('en-US', { month: 'long', y
 
     .project-content {
       grid-template-columns: 1fr;
-      gap: 1rem; /* Reduced from var(--spacing-md) which is 2rem */
+      gap: var(--spacing-sm); /* Using smallest spacing variable (1rem) */
     }
 
     .project-title {

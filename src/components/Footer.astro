@@ -1,0 +1,161 @@
+---
+export interface Props {
+  showPreFooter?: boolean;
+  class?: string;
+}
+
+const { showPreFooter = true, class: className = '' } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+{showPreFooter && (
+  <section class="pre-footer">
+    <div class="pre-footer-content">
+      <h2 class="pre-footer-heading">
+        Based in Paris.<br>
+        <a href="mailto:hello@aesso.com">Get in touch at hello@aesso.com ↗</a>
+      </h2>
+      <div class="pre-footer-text">
+        <p>We believe that the best user experiences are intuitive, beautiful and a joy to use. These principles are reflected in our work through an instinctual approach to design, and a meticulous attention to detail.</p>
+        <p>Our multidisciplinary team of senior and principal designers can spearhead projects of any scale, or work within your existing team to create digital products, branding, apps, websites and more.</p>
+      </div>
+    </div>
+  </section>
+)}
+
+<footer class={`footer ${className}`.trim()}>
+  <div class="footer-content">
+    <p class="copyright">© {currentYear} Aesso, LLC. All rights reserved.</p>
+    <p class="footer-social">Follow us on <a href="https://instagram.com/aessostudio" target="_blank" rel="noopener">Instagram</a> and <a href="https://x.com/aessostudio" target="_blank" rel="noopener">X</a>.</p>
+  </div>
+</footer>
+
+<style>
+  /* Pre-footer styles */
+  .pre-footer {
+    margin-top: var(--spacing-section);
+    padding: var(--spacing-page) var(--spacing-page);
+    position: relative;
+  }
+
+  .pre-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--spacing-page);
+    right: var(--spacing-page);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .pre-footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    align-items: start;
+  }
+
+  .pre-footer-heading {
+    font-size: var(--text-xl);
+    line-height: var(--leading-tight);
+    font-weight: 400;
+  }
+
+  .pre-footer-heading a {
+    text-decoration: none;
+    color: var(--color-text);
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .pre-footer-heading a:hover {
+    opacity: 1;
+  }
+
+  .pre-footer-text {
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+    max-width: 32rem;
+  }
+
+  .pre-footer-text p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .pre-footer-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Footer styles */
+  .footer {
+    margin-top: var(--spacing-footer);
+    padding: var(--spacing-page) var(--spacing-page);
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright,
+  .footer-social {
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+    color: var(--color-text);
+  }
+
+  .footer-social a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .footer-social a:hover {
+    opacity: 0.7;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    .pre-footer-heading {
+      font-size: var(--text-lg);
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .pre-footer {
+      padding: var(--spacing-page) var(--spacing-page-mobile);
+    }
+
+    .pre-footer::before {
+      left: var(--spacing-page-mobile);
+      right: var(--spacing-page-mobile);
+    }
+
+    .pre-footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-page-mobile);
+    }
+
+    .pre-footer-heading {
+      font-size: 1.375rem;
+    }
+
+    .footer {
+      padding: var(--spacing-page) var(--spacing-page-mobile);
+      margin-top: var(--spacing-xl);
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      text-align: center;
+    }
+  }
+
+  /* Small mobile styles */
+  @media (max-width: 480px) {
+    .pre-footer-heading {
+      font-size: var(--text-base-mobile);
+    }
+  }
+</style>

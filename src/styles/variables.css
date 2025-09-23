@@ -1,0 +1,69 @@
+/* Design System Variables */
+
+:root {
+  /* Typography Scale - based on modular scale 1.25 */
+  --text-xs: 0.8125rem;  /* 13px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.5rem;     /* 24px */
+  --text-xl: 1.875rem;   /* 30px */
+  --text-2xl: 2.5rem;    /* 40px */
+  --text-3xl: 3rem;      /* 48px */
+
+  /* Mobile Typography */
+  --text-base-mobile: 1.25rem;  /* 20px */
+  --text-lg-mobile: 1.375rem;   /* 22px */
+  --text-xl-mobile: 1.5rem;     /* 24px */
+
+  /* Line Heights */
+  --leading-tight: 1.125rem;  /* 18px */
+  --leading-normal: 1.3;
+  --leading-relaxed: 1.5;
+
+  /* Spacing Scale - based on 0.5rem (8px) */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 2rem;     /* 32px */
+  --spacing-lg: 4rem;     /* 64px */
+  --spacing-xl: 6rem;     /* 96px */
+  --spacing-2xl: 8rem;    /* 128px */
+  --spacing-3xl: 10rem;   /* 160px */
+
+  /* Page-specific spacing */
+  --spacing-page: 2.5rem;              /* 40px - Desktop page margins */
+  --spacing-page-mobile: 1.5rem;       /* 24px - Mobile page margins */
+  --spacing-page-mobile-top: 2rem;     /* 32px - Mobile top spacing for nav */
+  --spacing-hero: 17rem;               /* 272px - Hero section spacing */
+  --spacing-section: var(--spacing-2xl); /* Section spacing */
+  --spacing-footer: var(--spacing-3xl);  /* Footer top margin */
+
+  /* Breakpoints - Mobile First */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Colors */
+  --color-text: #141414;
+  --color-bg: #fff;
+  --color-gray: #999;
+  --color-border: #ebebeb;
+
+  /* Z-index Scale */
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 50;
+  --z-header: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+  --z-tooltip: 400;
+  --z-skip-link: 1000;
+
+  /* Fonts */
+  --font-primary: 'Suisse Intl', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Animation */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}

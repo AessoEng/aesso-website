@@ -8,7 +8,6 @@ import img3 from '../images/projects/mail/mail-3.webp?url';
 import img4 from '../images/projects/mail/mail-4.webp?url';
 import img5 from '../images/projects/mail/mail-5.webp?url';
 import img7 from '../images/projects/mail/mail-7.webp?url';
-
 ---
 
 <PageLayout title="Mail - Aesso" description="Product development and native app design for Mail" variant="fullwidth">
@@ -40,12 +39,10 @@ import img7 from '../images/projects/mail/mail-7.webp?url';
 </PageLayout>
 
 <style>
-  @import '../styles/global.css';
-
   .project-images {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--spacing-sm);
   }
 
   .project-images img,
@@ -55,11 +52,12 @@ import img7 from '../images/projects/mail/mail-7.webp?url';
     aspect-ratio: 16 / 9;
     object-fit: cover;
     background: #f5f5f5;
-    display: block;
   }
 
-
-  @media (max-width: 768px) {
-
+  /* Small mobile styles */
+  @media (min-width: 480px) {
+    .project-images {
+      gap: var(--spacing-sm);
+    }
   }
 </style>

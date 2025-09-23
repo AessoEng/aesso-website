@@ -57,7 +57,39 @@ const currentYear = new Date().getFullYear();
 </BaseLayout>
 
 <style>
-  /* Project-specific styles only */
+  /* Header styles matching PageLayout */
+  .header {
+    position: fixed;
+    top: var(--page-margin);
+    left: var(--page-margin);
+    right: var(--page-margin);
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .logo,
+  .email {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo:hover,
+  .email:hover {
+    opacity: 0.7;
+  }
+
+  /* Main content with reduced top padding */
+  .main {
+    padding-top: calc(var(--page-margin) * 2 + var(--spacing-md)); /* Reduced from larger spacing */
+  }
 
   .project-hero {
     width: 100%;
@@ -93,12 +125,99 @@ const currentYear = new Date().getFullYear();
     padding: var(--spacing-xl) var(--page-margin);
   }
 
-  /* Override for project pages - add top margin since pre-footer border is at top */
+  /* Pre-footer styles */
   .pre-footer {
     margin-top: var(--spacing-xxl);
+    padding: 2.5rem var(--page-margin);
+    position: relative;
+  }
+
+  .pre-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--page-margin);
+    right: var(--page-margin);
+    border-top: 1px solid #ebebeb;
+  }
+
+  .pre-footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .pre-footer-heading {
+    font-size: 1.875rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  .pre-footer-heading a {
+    text-decoration: none;
+    color: var(--color-text);
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .pre-footer-heading a:hover {
+    opacity: 1;
+  }
+
+  .pre-footer-text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    max-width: 32rem;
+  }
+
+  .pre-footer-text p {
+    margin-bottom: 1rem;
+  }
+
+  .pre-footer-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Footer styles */
+  .footer {
+    margin-top: 10rem;
+    padding: 2.5rem var(--page-margin);
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright,
+  .footer-social {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .footer-social a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .footer-social a:hover {
+    opacity: 0.7;
   }
 
   @media (max-width: 768px) {
+    .header {
+      left: 1.5rem;
+      right: 1.5rem;
+      top: 2rem;  /* 2rem padding above nav on mobile */
+    }
+
+    .main {
+      padding-top: calc(2rem * 2 + var(--spacing-md)); /* Adjusted for 2rem top padding */
+    }
+
     .project-hero {
       height: 50vh;
     }
@@ -109,6 +228,41 @@ const currentYear = new Date().getFullYear();
 
     .project-description {
       font-size: 1.125rem;
+    }
+
+    .project-info,
+    .project-content {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .pre-footer-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .pre-footer-heading {
+      font-size: 1.375rem;
+    }
+
+    .pre-footer {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .pre-footer::before {
+      left: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .footer {
+      padding: 2.5rem 1.5rem;
+      margin-top: 6rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      text-align: center;
     }
   }
 </style>
